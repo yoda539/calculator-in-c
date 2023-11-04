@@ -1,52 +1,41 @@
-# Prerequisites
-*.d
+#include <stdio.h>
+#include <stdlib.h>
+#include <locale.h>
 
-# Object files
-*.o
-*.ko
-*.obj
-*.elf
+int main()
+{
+    double num1, num2, soma, subtracao, multiplicacao, divisao;
+    char escolha;
 
-# Linker output
-*.ilk
-*.map
-*.exp
+    printf("Olá, digite o primeiro número\n", setlocale(LC_ALL, "Portuguese"));
+    scanf("%lf", &num1);
+    printf("\nagora digite o segundo número\n");
+    scanf("%lf", &num2);
+    printf("Seus números são %.2lf e %.2lf", num1, num2);
 
-# Precompiled Headers
-*.gch
-*.pch
+    printf("O que você quer fazer com esses números?\n");
+    printf("adição = a, subtração = s, multiplicação = m, divisão = d\n");
+    getchar();
+    scanf("%c", &escolha);
 
-# Libraries
-*.lib
-*.a
-*.la
-*.lo
+       if(escolha == 'a') {
+       soma = num1 + num2;
+       printf("\nAqui está o resultado: %.2lf\n", soma);
 
-# Shared objects (inc. Windows DLLs)
-*.dll
-*.so
-*.so.*
-*.dylib
+       } else if(escolha == 's') {
+       subtracao = num1 - num2;
+       printf("\nAqui está o resultado: %.2lf\n", subtracao);
 
-# Executables
-*.exe
-*.out
-*.app
-*.i*86
-*.x86_64
-*.hex
+       }else if(escolha == 'm') {
+       multiplicacao = num1 * num2;
+       printf("\nAqui está o resultado: %.2lf\n", multiplicacao);
 
-# Debug files
-*.dSYM/
-*.su
-*.idb
-*.pdb
+       }else if(escolha == 'd') {
+       divisao = num1 / num2;
+       printf("\nAqui está o resultado: %.2lf\n", divisao);
 
-# Kernel Module Compile Results
-*.mod*
-*.cmd
-.tmp_versions/
-modules.order
-Module.symvers
-Mkfile.old
-dkms.conf
+       }
+
+    return 0;
+}
+
